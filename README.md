@@ -1,2 +1,2 @@
-# Leetcode
-Add Two Number.->是指针指向其成员的运算符 .是结构体的成员运算符。最大的区别是->前面放的是指针，而.前面跟的是结构体变量
+# Exercices
+Problems from 牛客/leetcode, I will keep doing it.
