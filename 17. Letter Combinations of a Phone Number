@@ -1,0 +1,32 @@
+class Solution {
+private:
+    unordered_map<int,vector<char>> hash;
+    vector<string> ans;
+    
+public:
+    void permute(string digits,int i, string s){
+        if(i==digits.size()) { // if we have same length as of digit
+            ans.push_back(s);
+            return;
+        }
+        for(char c: hash[digits[i]]){
+            s.push_back(c); // take 
+            permute(digits,i+1,s);
+            s.pop_back(); // remove it as we have to check other possiblities also
+        }
+    }
+    
+    vector<string> letterCombinations(string digits) {
+        if(digits.empty()) return {};
+        hash['2'] = {'a','b','c'};
+        hash['3'] = {'d','e','f'};
+        hash['4'] = {'g','h','i'};
+        hash['5'] = {'j','k','l'};
+        hash['6'] = {'m','n','o'};
+        hash['7'] = {'p','q','r','s'};
+        hash['8'] = {'t','u','v'};
+        hash['9'] = {'w','x','y','z'};
+        permute(digits,0,"");
+        return ans;
+    }
+};
